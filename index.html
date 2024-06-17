@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./css/main.css" />
+        <link rel="stylesheet" href="./css/styles.css" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -25,6 +25,7 @@
         <title>Let’sFood | web project</title>
     </head>
     <body>
+        <!-- header section start -->
         <header class="header container">
             <a class="header__logo" href="index.html">
                 <img src="./images/logo.svg" alt="logo" />
@@ -32,44 +33,396 @@
             <nav class="header__nav">
                 <ul class="header__list">
                     <li class="header__item active">
-                        <a href="#" class="header__link active">Home</a>
+                        <a href="#home" class="header__link active">Home</a>
                         <div class="header__state"></div>
                     </li>
                     <li class="header__item">
-                        <a href="#" class="header__link">Menu</a>
+                        <a href="#serve" class="header__link">How it works</a>
                         <div class="header__state"></div>
                     </li>
                     <li class="header__item">
-                        <a href="#" class="header__link">How it works</a>
+                        <a href="#menu" class="header__link">Menu</a>
                         <div class="header__state"></div>
                     </li>
                     <li class="header__item">
-                        <a href="#" class="header__link">About</a>
+                        <a href="#thoughts" class="header__link">About</a>
                         <div class="header__state"></div>
                     </li>
                     <li class="header__item">
-                        <a href="#" class="header__link">Contact</a>
+                        <a href="#subcription" class="header__link">Contact</a>
                         <div class="header__state"></div>
                     </li>
                 </ul>
             </nav>
-            <div class="header__buttons">
-                <a href="index.html">
-                    <img
-                        src="./images/header__search.svg"
-                        alt="search-button"
-                    />
-                </a>
-                <a href="index.html">
-                    <img src="./images/header__cart.svg" alt="search-button" />
-                </a>
+            <div class="header__media-sm">
+                <div class="header__buttons">
+                    <a href="index.html">
+                        <img
+                            src="./images/header__search.svg"
+                            alt="search-button"
+                        />
+                    </a>
+                    <a href="index.html" data-cart>
+                        <img
+                            src="./images/header__cart.svg"
+                            alt="search-button"
+                        />
+                    </a>
+                </div>
+                <button class="btn">
+                    <a href="index.html">
+                        <img
+                            src="./images/button-image.svg"
+                            alt="button-image"
+                        />
+                        <span class="btn__text">Sign in</span>
+                    </a>
+                </button>
             </div>
-            <button class="btn">
-                <a href="index.html">
-                    <img src="./images/button-image.svg" alt="button-image" />
-                    <span class="btn__text">Sign in</span>
-                </a>
-            </button>
         </header>
+        <!-- header section end -->
+        <!-- 
+            Main start
+        -->
+        <main>
+            <!-- _hero-section start -->
+            <section class="hero container" id="home">
+                <div class="hero__left-element">
+                    <div class="hero__left-first"></div>
+                    <div class="hero__left-first"></div>
+                </div>
+                <div class="hero__circle circle--first"></div>
+                <div class="hero__circle circle--second"></div>
+                <div class="hero__circle circle--third"></div>
+                <div class="hero__circle circle--fourth"></div>
+                <div class="hero__information">
+                    <h1>Be The Fastest In Delivery Your <span>Food</span></h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                        ut aliquam, purus sit amet
+                    </p>
+                    <button class="btn">
+                        <a href="index.html">
+                            <span class="btn__text">Get Started</span>
+                        </a>
+                    </button>
+                </div>
+                    <img src="./images/_hero-image.svg" alt="hero-img" />
+            </section>
+            <!-- _hero-section end -->
+            <!-- _serve-section start -->
+            <section class="serve container" id="serve">
+                <div class="serve__wrapper">
+                    <div class="serve__content">
+                        <h3>How it works</h3>
+                        <h4>What We Serve</h4>
+                        <p>
+                            Product Quality Is Our Priority, And Always
+                            Guarantees Halal And Safety Until It Is In Your
+                            Hands.
+                        </p>
+                    </div>
+                    <div class="serve__card-wrap">
+                        <div class="serve__card">
+                            <img
+                                src="./images/serve__card1.svg"
+                                alt="card-image"
+                            />
+                            <h5>Easy To Order</h5>
+                            <p>You only order through the app</p>
+                        </div>
+                        <div class="serve__card">
+                            <img
+                                src="./images/serve__card2.svg"
+                                alt="card-image"
+                            />
+                            <h5>Fastest Delivery</h5>
+                            <p>Delivery will be on time</p>
+                        </div>
+                        <div class="serve__card">
+                            <img
+                                src="./images/serve__card3.svg"
+                                alt="card-image"
+                            />
+                            <h5>Best Quality</h5>
+                            <p>The best quality of food for you</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- _serve-section end -->
+            <!-- _menu-section start -->
+            <section class="menu container" id="menu">
+                <div class="menu__contact serve__content">
+                    <h3>Our menu</h3>
+                    <h4>Our Popular Menu</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                        ut aliquam
+                    </p>
+                </div>
+                <div class="menu__card-wrap">
+                    <div class="menu__card">
+                        <div class="menu__card-img">
+                            <img
+                                src="./images/menu__card1.svg"
+                                alt="card-image"
+                            />
+                        </div>
+                        <div class="menu__card-info">
+                            <h6>Mie Ramen</h6>
+                            <p>lorem ipsum</p>
+                            <div class="menu__card-price">
+                                <span>$ 20.2</span>
+                                <img
+                                    src="./images/menu__card-love.svg"
+                                    alt="img"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu__card">
+                        <div class="menu__card-img">
+                            <img
+                                src="./images/menu__card2.svg"
+                                alt="card-image"
+                            />
+                        </div>
+                        <div class="menu__card-info">
+                            <h6>Salad Tahu</h6>
+                            <p>lorem ipsum</p>
+                            <div class="menu__card-price">
+                                <span>$ 20.2</span>
+                                <img
+                                    src="./images/menu__card-loveblack.svg"
+                                    alt="img"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu__card">
+                        <div class="menu__card-img">
+                            <img
+                                src="./images/menu__card3.svg"
+                                alt="card-image"
+                            />
+                        </div>
+                        <div class="menu__card-info">
+                            <h6>Roti Bakar</h6>
+                            <p>lorem ipsum</p>
+                            <div class="menu__card-price">
+                                <span>$ 20.2</span>
+                                <img
+                                    src="./images/menu__card-loveblack.svg"
+                                    alt="img"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu__card">
+                        <div class="menu__card-img">
+                            <img
+                                src="./images/menu__card4.svg"
+                                alt="card-image"
+                            />
+                        </div>
+                        <div class="menu__card-info">
+                            <h6>Spaghetti</h6>
+                            <p>lorem ipsum</p>
+                            <div class="menu__card-price">
+                                <span>$ 20.2</span>
+                                <img
+                                    src="./images/menu__card-loveblack.svg"
+                                    alt="img"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu__btn">
+                    <button class="btn">
+                        <a href="index.html">
+                            <span class="btn__text">More Menu</span>
+                        </a>
+                    </button>
+                </div>
+            </section>
+            <!-- _menu-section end -->
+            <!-- _thoughts-section start -->
+            <section class="thoughts container" id="thoughts">
+                <div class="thoughts__images">
+                    <div class="thoughts__img-first">
+                        <img src="./images/thoughts-img.avif" alt="img" />
+                    </div>
+                    <div class="thoughts__img-second">
+                        <div class="thoughts__img-second1"></div>
+                        <div class="thoughts__img-second2"></div>
+                    </div>
+                </div>
+                <div class="thoughts__info">
+                    <div class="thoughts__content serve__content">
+                        <h3>What the say</h3>
+                        <h4>What Our Customers Say About Us</h4>
+                    </div>
+                    <div class="thoughts__thought">
+                        <div class="thoughts__nauras--thought">
+                            <div class="person--contant">
+                                <img src="./images/naura.svg" alt="img" />
+                                <div class="person--info">
+                                    <h6>Naura Silvana</h6>
+                                    <div class="star">
+                                        <img
+                                            src="./images/star.svg"
+                                            alt="img"
+                                        />
+                                        <img
+                                            src="./images/star.svg"
+                                            alt="img"
+                                        />
+                                        <img
+                                            src="./images/star.svg"
+                                            alt="img"
+                                        />
+                                        <img
+                                            src="./images/star.svg"
+                                            alt="img"
+                                        />
+                                        <img
+                                            src="./images/star1.svg"
+                                            alt="img"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <p>
+                                “Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit ut aliquam, purus sit amet
+                                luctus venenatis.”
+                            </p>
+                        </div>
+                        <div class="thoughts__nauras--thought">
+                            <div class="person--contant">
+                                <img src="./images/aruza-img.svg" alt="" />
+                                <div class="person--info">
+                                    <h6>Azura</h6>
+                                    <div class="star">
+                                        <img
+                                            src="./images/star.svg"
+                                            alt="img"
+                                        />
+                                        <img
+                                            src="./images/star.svg"
+                                            alt="img"
+                                        />
+                                        <img
+                                            src="./images/star.svg"
+                                            alt="img"
+                                        />
+                                        <img
+                                            src="./images/star.svg"
+                                            alt="img"
+                                        />
+                                        <img
+                                            src="./images/star1.svg"
+                                            alt="img"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <p>
+                                “Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit ut aliquam, purus sit amet
+                                luctus venenatis.”
+                            </p>
+                        </div>
+                    </div>
+                    <div class="thoughts__corusel">
+                        <img src="./images/crosel1.svg" alt="" />
+                        <img src="./images/crosel2.svg" alt="" />
+                        <img src="./images/crosel2.svg" alt="" />
+                    </div>
+                </div>
+            </section>
+            <!-- _thoughts-section end -->
+            <!-- _subcription-section start -->
+            <section class="subcription container" id="subcription">
+                <div class="subcription__wrap">
+                    <h5>Join our member and get discount up to 50%</h5>
+                    <div class="menu__btn">
+                        <button class="btn">
+                            <a href="index.html">
+                                <span class="btn__text">More Menu</span>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!-- _subcription-section end -->
+        </main>
+        <!-- 
+            Main start
+        -->
+        <!--  
+            Footer start
+        -->
+        <footer class="footer container">
+            <div class="hero__circle circle--first-footer"></div>
+            <div class="hero__circle circle--second-footer"></div>
+            <div class="hero__circle circle--third-footer"></div>
+            <div class="hero__circle circle--fourth-footer"></div>
+            <div class="footer__wrap">
+                <div class="footer__wrap-first">
+                    <img src="./images/logo.svg" alt="logo" />
+                    <p>
+                        Jalan Semangka Raya, Telaga Murni,Cikarang Barat, Kab.
+                        Bekasi
+                    </p>
+                    <div class="footer__social">
+                        <div class="footer__circle-social">
+                            <a href="index.html">
+                                <img src="./images/instagram.svg" alt="img" />
+                            </a>
+                        </div>
+                        <div class="footer__circle-social">
+                            <a href="index.html">
+                                <img src="./images/facebook.svg" alt="img" />
+                            </a>
+                        </div>
+                        <div class="footer__circle-social">
+                            <a href="index.html">
+                                <img src="./images/twitter.svg" alt="img" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__wrap-second">
+                    <h6>Company</h6>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">How It Work</a></li>
+                    </ul>
+                </div>
+                <div class="footer__wrap-second footer__wrap-third">
+                    <h6>Policy</h6>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Shipping</a></li>
+                    </ul>
+                </div>
+                <div class="footer__wrap-second footer__wrap-fourth">
+                    <h6>Get In Touch</h6>
+                    <ul>
+                        <li><a href="#">Get In Touch</a></li>
+                        <li><a href="#">food@example.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p>© 2024 Let’sFood. ALL RIGHT RESERVED.</p>
+        </footer>
+        <!--  
+            Footer end
+        -->
     </body>
 </html>

@@ -1,1 +1,12 @@
-// container section
+// container section 
+@use "../abstract/mixins";
+.container {
+    width: 1440px;
+    margin: 0 auto;
+}
+
+@include mixins.media-sm {
+    .container {
+        width: 100%;
+    }
+}

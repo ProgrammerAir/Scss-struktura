@@ -1,0 +1,106 @@
+@charset "UTF-8";
+@use "../abstract/functions";
+@use "../abstract/variables";
+@use "../abstract/mixins";
+
+.serve {
+    padding: functions.function(61, variables.$number) 0;
+
+    &__wrapper {
+        width: functions.function(1032, variables.$number);
+        margin: 0 auto;
+
+        .serve__card-wrap {
+            @include mixins.flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .serve__card {
+                text-align: center;
+
+                h5 {
+                    margin: functions.function(24, variables.$number) 0 functions.function(15, variables.$number);
+                    font-size: functions.function(28, variables.$number);
+                    font-weight: 600;
+                    line-height: functions.function(35, variables.$number);
+                }
+
+                p {
+                    width: functions.function(234, variables.$number);
+                    margin: 0;
+                    font-size: functions.function(20, variables.$number);
+                    font-weight: 500;
+                    line-height: functions.function(25, variables.$number);
+                    color: variables.$btn-color;
+                    opacity: 0.7;
+                }
+            }
+
+            .serve__card:nth-child(2) {
+                h5 {
+                    margin: functions.function(24, variables.$number) 0;
+                    margin-bottom: functions.function(15, variables.$number);
+                }
+                p {
+                    width: functions.function(200, variables.$number);
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+
+    &__content {
+        margin-bottom: functions.function(32, variables.$number);
+        text-align: center;
+
+        h3 {
+            font-size: functions.function(22, variables.$number);
+            font-weight: 500;
+            line-height: functions.function(27.5, variables.$number);
+            color: variables.$main-btn-bg;
+        }
+
+        h4 {
+            margin: functions.function(7, variables.$number) 0 functions.function(26, variables.$number);
+            font-size: functions.function(32, variables.$number);
+            font-weight: 700;
+            line-height: functions.function(40, variables.$number);
+            color: variables.$btn-color;
+        }
+
+        p {
+            width: functions.function(611, variables.$number);
+            margin: 0 auto;
+            font-size: functions.function(22, variables.$number);
+            font-weight: 500;
+            line-height: functions.function(27.5, variables.$number);
+        }
+    }
+}
+
+@include mixins.media-sm {
+    .serve {
+        padding: functions.function(20, variables.$number) 0;
+
+        &__wrapper {
+            width: 100%;
+        }
+
+        &__card-wrap {
+            gap: functions.function(20, variables.$number);
+            flex-direction: column;
+        }
+
+        &__card:nth-child(2) {
+            padding: 0 functions.function(10, variables.$number);
+        }
+
+        &__content {
+            p {
+                width: 90%;
+                margin: functions.function(15, variables.$number) auto functions.function(25, variables.$number);
+                text-align: center;
+            }
+        }
+    }
+}

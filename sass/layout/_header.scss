@@ -1,1 +1,131 @@
 // header qismi
+@use "../abstract/functions";
+@use "../abstract/mixins";
+@use "../abstract/variables";
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: functions.function(108, variables.$number);
+    padding: 0 functions.function(141.5, variables.$number) 0
+        functions.function(128.5, variables.$number);
+    margin-bottom: functions.function(61, variables.$number);
+    background: variables.$bg-color;
+
+    &__list {
+        @include mixins.flex;
+        align-items: start;
+        gap: functions.function(37, variables.$number);
+        height: functions.function(38.18, variables.$number);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__nav {
+        margin-top: functions.function(14, variables.$number);
+    }
+
+    &__item__wrap {
+        @include mixins.flex;
+    }
+
+    &__item:active,
+    &__item.active {
+        $parent: ".header";
+        #{$parent}__state {
+            display: block;
+        }
+    }
+
+    &__item.active,
+    &__item:active {
+        $parent: ".header";
+        #{$parent}__link {
+            color: #000;
+        }
+    }
+
+    &__item__wrap {
+        gap: functions.function(5.27, variables.$number);
+        height: 100%;
+        border: 1px solid black;
+    }
+
+    &__item {
+        a {
+            display: block;
+            font-family: variables.$main-fonts;
+            font-size: functions.function(22, variables.$number);
+            font-weight: 500;
+            line-height: functions.function(27.5, variables.$number);
+            text-align: left;
+            margin-bottom: functions.function(5.27, variables.$number);
+            color: #1d1d1db2;
+        }
+    }
+
+    &__state {
+        height: functions.function(3.91, variables.$number);
+        background-color: #ffcb45;
+        border-radius: functions.function(4, variables.$number);
+        display: none;
+    }
+
+    &__buttons {
+        @include mixins.flex;
+        gap: functions.function(39, variables.$number);
+    }
+
+    &__media-sm {
+        @include mixins.flex;
+        align-items: center;
+        gap: functions.function(24, variables.$number);
+    }
+}
+
+@include mixins.media-sm {
+    .header {
+        height: functions.function(80, variables.$number);
+        padding: 0 functions.function(7, variables.$number);
+        margin-bottom: functions.function(30, variables.$number);
+
+        &__logo {
+            margin-bottom: functions.function(11.8, variables.$number);
+        }
+
+        &__nav {
+            display: none;
+        }
+
+        & .btn {
+            a {
+                gap: functions.function(6, variables.$number);
+                padding: functions.function(10.07, variables.$number) functions.function(12.5, variables.$number);
+            }
+        }
+
+        &__buttons {
+            a {
+                img {
+                    width: functions.function(23, variables.$number);
+                    height: functions.function(23, variables.$number);
+                }
+            }
+        }
+
+        &__buttons {
+            a[data-cart] {
+                display: none;
+            }
+        }
+
+        &__media-sm {
+            @include mixins.flex;
+            align-items: center;
+            gap: functions.function(13, variables.$number);
+            margin: functions.function(14, variables.$number) 0;
+        }
+    }
+}

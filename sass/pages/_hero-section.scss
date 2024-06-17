@@ -1,0 +1,160 @@
+@charset "UTF-8";
+@use "../abstract/functions";
+@use "../abstract/variables";
+@use "../abstract/mixins";
+
+.hero {
+    position: relative;
+    @include mixins.flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: functions.function(12, variables.$number)
+        functions.function(130, variables.$number) 0;
+    background-color: variables.$bg-color;
+
+    &__left-element {
+        position: absolute;
+        left: 0;
+        bottom: functions.function(36, variables.$number);
+        width: functions.function(181, variables.$number);
+        height: functions.function(74, variables.$number);
+        @include mixins.flex;
+        flex-direction: column;
+
+        .hero__left-first {
+            width: 100%;
+            height: 100%;
+            background-image: url("../../images/hero__left-element.svg");
+            background-position: center;
+            background-size: cover;
+        }
+    }
+
+    &__circle {
+        position: absolute;
+        background-color: variables.$circle-bg;
+        border-radius: 50%;
+    }
+
+    .circle--first {
+        top: functions.function(52, variables.$number);
+        left: functions.function(810, variables.$number);
+        width: functions.function(54, variables.$number);
+        height: functions.function(54, variables.$number);
+    }
+
+    .circle--second {
+        top: functions.function(249, variables.$number);
+        left: functions.function(854, variables.$number);
+        width: functions.function(19, variables.$number);
+        height: functions.function(19, variables.$number);
+    }
+
+    .circle--third {
+        top: functions.function(249, variables.$number);
+        right: functions.function(146, variables.$number);
+        width: functions.function(74, variables.$number);
+        height: functions.function(74, variables.$number);
+    }
+
+    .circle--fourth {
+        bottom: functions.function(97, variables.$number);
+        right: functions.function(665, variables.$number);
+        width: functions.function(41, variables.$number);
+        height: functions.function(41, variables.$number);
+    }
+
+    &__information {
+        h1 {
+            width: functions.function(480, variables.$number);
+            font-size: functions.function(48, variables.$number);
+            font-weight: 600;
+            line-height: functions.function(60, variables.$number);
+
+            span {
+                color: variables.$main-btn-bg;
+            }
+        }
+        p {
+            width: functions.function(360, variables.$number);
+            font-family: Readex Pro;
+            font-size: functions.function(18, variables.$number);
+            font-weight: 400;
+            line-height: functions.function(22.5, variables.$number);
+            text-align: left;
+        }
+    }
+}
+
+@include mixins.media-sm {
+    .hero {
+        width: 100%;
+        position: relative;
+        padding: 0 functions.function(7, variables.$number);
+        flex-direction: column;
+
+        &__information {
+            text-align: center;
+
+            h1 {
+                width: 94.9%;
+                margin: 0 auto;
+                font-size: functions.function(34, variables.$number);
+                font-weight: 600;
+                line-height: functions.function(43, variables.$number);
+            }
+
+            p {
+                width: 90%;
+                margin: functions.function(15, variables.$number) auto
+                    functions.function(25, variables.$number);
+                text-align: center;
+            }
+        }
+
+        &__information ~ img {
+            width: 100%;
+        }
+
+        &__left-element {
+            display: none;
+        }
+
+        .circle--first {
+            top: 72%;
+            left: 45%;
+            width: functions.function(15, variables.$number);
+            height: functions.function(15, variables.$number);
+        }
+
+        .circle--third {
+            top: 50%;
+            right: 4%;
+            width: functions.function(50, variables.$number);
+            height: functions.function(50, variables.$number);
+        }
+
+        .circle--fourth {
+            bottom: 50%;
+            left: 5%;
+            width: functions.function(41, variables.$number);
+            height: functions.function(41, variables.$number);
+        }
+
+        .circle--fourth::after {
+            content: "";
+            display: block;
+            position: relative;
+            top: functions.function(310, variables.$number);
+            left: functions.function(70, variables.$number);
+            border-radius: 50%;
+            width: functions.function(35, variables.$number);
+            height: functions.function(35, variables.$number);
+            background-color: variables.$circle-bg;
+        }
+
+        .circle--second {
+            display: none;
+        }
+    }
+}

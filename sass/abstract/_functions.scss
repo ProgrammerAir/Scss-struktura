@@ -1,1 +1,6 @@
 // bu yerda proyectdagi barcha functionlar yozib boriladi.
+// header function
+@function function($log, $number) {
+    $rem: calc($log / $number) * 1rem;
+    @return $rem;
+}

@@ -1,0 +1,149 @@
+@charset "UTF-8";
+@use "../abstract/functions";
+@use "../abstract/mixins";
+@use "../abstract/variables";
+
+.footer {
+    position: relative;
+    padding: functions.function(84.46, variables.$number)
+        functions.function(130, variables.$number)
+        functions.function(47, variables.$number);
+    background-color: variables.$bg-color;
+
+    &__wrap {
+        @include mixins.flex;
+        align-items: start;
+        padding-bottom: functions.function(91, variables.$number);
+        margin-bottom: functions.function(45.96, variables.$number);
+        border-bottom: 1px solid #1d1d1d80;
+
+        &-first {
+            margin-right: functions.function(20, variables.$number);
+
+            p {
+                width: functions.function(380, variables.$number);
+                font-size: functions.function(20, variables.$number);
+                font-weight: 400;
+                line-height: functions.function(25, variables.$number);
+                color: variables.$btn-color;
+                opacity: 0.7;
+            }
+
+            .footer__social {
+                @include mixins.flex;
+                align-items: center;
+                gap: functions.function(24, variables.$number);
+
+                .footer__circle-social {
+                    width: functions.function(45, variables.$number);
+                    height: functions.function(48, variables.$number);
+                    border-radius: 50%;
+                    background-color: #fff;
+                    box-shadow: 0px 4px 12px 0px #1d1d1d26;
+                    a {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                    }
+                }
+
+                .footer__circle-social:nth-child(2) {
+                    background-color: variables.$circle-bg;
+                }
+            }
+        }
+
+        &-second,
+        &-second ul {
+            @include mixins.flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            gap: functions.function(31, variables.$number);
+            margin-right: functions.function(189, variables.$number);
+
+            h6 {
+                margin-top: functions.function(17, variables.$number);
+                font-size: functions.function(20, variables.$number);
+                font-weight: 500;
+                line-height: functions.function(25, variables.$number);
+            }
+
+            ul {
+                gap: functions.function(16, variables.$number);
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    a {
+                        color: variables.$btn-color;
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
+
+        &-third {
+            margin-right: functions.function(122, variables.$number);
+        }
+
+        &-fourth {
+            margin-right: functions.function(108, variables.$number);
+        }
+    }
+
+    & &__wrap ~ p {
+        width: functions.function(331, variables.$number);
+        margin: 0 auto;
+        font-size: functions.function(16, variables.$number);
+        font-weight: 400;
+        line-height: functions.function(20, variables.$number);
+        color: variables.$btn-color;
+        opacity: 0.7;
+    }
+}
+
+@include mixins.media-sm {
+    .footer {
+        padding: 0;
+
+        &__wrap {
+            padding: 0;
+            flex-direction: column;
+            text-align: center;
+            margin-bottom: functions.function(32, variables.$number);
+
+            &-first {
+                margin: 0 auto;
+
+                .footer__social {
+                    width: max-content;
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        &__wrap-second {
+            width: max-content;
+            margin: 0 auto;
+            text-align: center;
+
+            ul {
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        &__wrap-fourth {
+            margin-bottom: functions.function(20, variables.$number);
+            h6 {
+                width: max-content;
+                margin: functions.function(17, variables.$number) auto 0;
+            }
+        }
+    }
+}

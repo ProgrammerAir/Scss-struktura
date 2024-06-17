@@ -1,0 +1,25 @@
+@use "../abstract/functions";
+@use "../abstract/variables";
+
+button.btn {
+    a {
+        display: flex;
+        gap: functions.function(16, variables.$number);
+    }
+}
+
+.btn {
+    border: none;
+    border-radius: functions.function(50, variables.$number);
+    background-color: variables.$main-btn-bg;
+}
+
+.btn {
+    a {
+        color: variables.$btn-color;
+        padding: functions.function(10.07, variables.$number) functions.function(20.5, variables.$number);
+        font-size: functions.function(14, variables.$number);
+        font-weight: 700;
+        line-height: functions.function(17.5, variables.$number);
+    }
+}

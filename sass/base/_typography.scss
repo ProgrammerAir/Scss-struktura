@@ -1,1 +1,6 @@
 // bu yerda proyectdagi barcha fontga tegishli codelar yozib boriladi.
+@use "../abstract/variables";
+
+body {
+    font-family: variables.$main-fonts;
+}

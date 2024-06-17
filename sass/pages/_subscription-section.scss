@@ -1,0 +1,45 @@
+@charset "UTF-8";
+@use "../abstract/functions";
+@use "../abstract/variables";
+@use "../abstract/mixins";
+
+.subcription {
+    padding: 0 functions.function(130, variables.$number) functions.function(61, variables.$number);
+    text-align: center;
+
+    &__wrap {
+        padding: functions.function(92, variables.$number) functions.function(328, variables.$number) functions.function(91.87, variables.$number);
+        border-radius: functions.function(10, variables.$number);
+        background-image: url(../../images/subcription__img.svg);
+        background-size: cover;
+
+        h5 {
+            margin-bottom: functions.function(30, variables.$number);
+            font-size: functions.function(32, variables.$number);
+            font-weight: 700;
+            line-height: functions.function(40, variables.$number);
+            color: white;
+        }
+    }
+}
+
+@include mixins.media-sm {
+    .subcription {
+        padding: 0 0 functions.function(32, variables.$number);
+        width: 100%;
+
+        &__wrap {
+            width: 90%;
+            margin: 0 auto;
+            padding: functions.function(40, variables.$number) functions.function(50, variables.$number);
+
+            h5 {
+                margin-bottom: functions.function(30, variables.$number);
+                font-size: functions.function(25, variables.$number);
+                font-weight: 700;
+                line-height: functions.function(40, variables.$number);
+                color: white;
+            }
+        }
+    }
+}

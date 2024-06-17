@@ -1,0 +1,159 @@
+@charset "UTF-8";
+@use "../abstract/functions";
+@use "../abstract/variables";
+@use "../abstract/mixins";
+
+.thoughts {
+    @include mixins.flex;
+    align-items: center;
+    gap: functions.function(101, variables.$number);
+    overflow: hidden;
+    padding: 0 0 functions.function(61, variables.$number) functions.function(170.5, variables.$number);
+
+    &__images {
+        flex-direction: column;
+        gap: functions.function(15, variables.$number);
+    }
+
+    &__img-second,
+    &__images{
+        gap: functions.function(15, variables.$number);
+    }
+
+    &__img-first {
+        img {
+            width: functions.function(431, variables.$number);
+            height: functions.function(187, variables.$number);
+            border-radius: functions.function(10, variables.$number) functions.function(10, variables.$number) 0px 0px;
+        }
+    }
+
+    &__img-second > {
+        div {
+            width: functions.function(208, variables.$number);
+            height: functions.function(208, variables.$number);
+            background-size: cover;
+            background-position: center;
+            box-shadow: 4px 4px 20px 0px #00000040;
+        }
+    }
+    &__img-second1 {
+        background-image: url(../../images/thumb-1920-913175.jpg);
+        border-radius: 0px 0px 0px functions.function(10, variables.$number);
+    }
+    &__img-second2 {
+        background-image: url(../../images/thump.jpeg);
+        border-radius: 0px 0px functions.function(10, variables.$number) 0px;
+    }
+
+    &__info {
+        margin-top: functions.function(40, variables.$number);
+    }
+
+    &__content {
+        margin-bottom: functions.function(32, variables.$number);
+        text-align: left;
+
+        h4 {
+            margin: 0;
+        }
+    }
+
+    &__thought,
+    .person--contant,
+    &__img-second,
+    &__images {
+        @include mixins.flex;
+        align-items: center;
+    }
+    
+    &__thought {
+        gap: functions.function(24, variables.$number);
+    }
+
+    .person--contant {
+        gap: functions.function(19, variables.$number);
+    }
+
+    &__nauras--thought {
+        padding: functions.function(28, variables.$number) functions.function(20, variables.$number) functions.function(29, variables.$number);
+        margin-bottom: functions.function(25, variables.$number);
+        border-radius: functions.function(10, variables.$number);
+        background-color: #f1f1f1;
+        p {
+            width: functions.function(412, variables.$number);
+            margin: functions.function(24, variables.$number) 0 0 0;
+            font-size: functions.function(18, variables.$number);
+            font-weight: 400;
+            line-height: functions.function(22.5, variables.$number);
+            color: variables.$btn-color;
+            opacity: .7;
+        }
+        h6 {
+            font-size: functions.function(20, variables.$number);
+            font-weight: 500;
+            line-height: functions.function(25, variables.$number);
+        }
+    }
+
+    &__corusel {
+        @include mixins.flex;
+        gap: functions.function(14, variables.$number);
+        position: relative;
+        left: functions.function(175, variables.$number);
+        width: max-content;
+    }
+}
+
+@include mixins.media-sm {
+    .thoughts {
+        padding: functions.function(20, variables.$number) 0;
+        flex-direction: column;
+        gap: 0;
+
+        &__images {
+            width: 90%;
+            gap: functions.function(10, variables.$number);
+        }
+
+        &__img-first, &__img-second{
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &__img-second {
+            gap: functions.function(10, variables.$number);
+        }
+
+        &__content {
+            width: 85%;
+            margin: 0 auto functions.function(32, variables.$number);
+            text-align: center;
+            h3 {
+                width: max-content;
+                margin: 0 auto functions.function(5, variables.$number);
+            }
+        }
+
+        &__thought {
+            width: 90%;
+            margin: 0 auto;
+            gap: functions.function(20, variables.$number);
+            flex-direction: column;
+        }
+
+        &__nauras--thought {
+            width: 90%;
+
+            p { 
+                width: 100%;
+                font-size: functions.function(17, variables.$number);
+                font-weight: 400;
+                line-height: functions.function(22.5, variables.$number);
+            }
+        }
+    }
+}
